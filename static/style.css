@@ -1,0 +1,114 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  color: #333;
+}
+
+form {
+  margin: 20px 0;
+  text-align: center;
+}
+
+input {
+  margin: 0 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Welcome message styles */
+.welcome-message {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.dollars-animation {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dollar {
+  font-size: 40px;
+  color: #4caf50; /* Green color */
+  margin: 0 10px;
+  animation: bounce 1s infinite;
+}
+
+.dollar:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dollar:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.dollar:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}

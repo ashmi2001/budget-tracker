@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="welcome-message">
+    <h1>Welcome to Your Budget Tracker</h1>
+    <div class="dollars-animation">
+        <span class="dollar">$</span>
+        <span class="dollar">$</span>
+        <span class="dollar">$</span>
+        <span class="dollar">$</span>
+    </div>
+</div>
+
+<form action="{{ url_for('add_entry') }}" method="post">
+    <input type="text" name="description" placeholder="Description" required>
+    <input type="number" name="amount" placeholder="Amount" step="0.01" required>
+    <button type="submit">Add Entry</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in budget_data %}
+        <tr>
+            <td>{{ entry.description }}</td>
+            <td>${{ "%.2f"|format(entry.amount) }}</td>
+            <td>
+                <form action="{{ url_for('delete_entry', index=loop.index0) }}" method="post">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
